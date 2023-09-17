@@ -21,7 +21,7 @@ export default function CartIcon() {
   const { cartCount } = useGlobalContext();
   const route = useRouter()
   const routeToCart = () => {
-    route.replace("/cart")
+    route.replace(`/cart`)
   }
   return (
       <IconButton aria-label="cart" onClick={routeToCart}>

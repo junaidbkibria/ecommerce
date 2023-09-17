@@ -19,7 +19,7 @@ const AppBarComp: React.FC = () => {
         <Typography>Junaid's Shop</Typography>
         <Box sx={{ mr: "5vw" }}>
           <IconButton aria-label="cart" sx={{ mr: 2 }}>
-              <HomeIcon onClick={() => route.replace("/")} />
+              <HomeIcon onClick={() => route.replace(`/`)} />
           </IconButton>
           <CartIcon />
         </Box>
