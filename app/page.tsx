@@ -10,7 +10,7 @@ interface Product {
   description: string;
   price: number;
   image: string;
-  rate: number;
+  rating: {rate: number};
   count: number;
   // Add more properties as needed
 }
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   const productPage = (id: number) => {
-    router.push(`/product/${id}`);
+    router.replace(`/product/${id}`);
   };
 
   const addNewProduct = (product: Product) => {

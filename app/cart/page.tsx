@@ -11,7 +11,7 @@ const Cart: React.FC = () => {
     description: string;
     price: number;
     image: string;
-    rate: number;
+    rating: {rate: number};
     count: number;
     // Add more properties as needed
   }

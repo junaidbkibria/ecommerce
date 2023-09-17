@@ -8,7 +8,7 @@ type DataType = {
     description: string;
     price: number;
     image: string;
-    rate: number;
+    rating: {rate: number};
     count: number
     // Add more properties as needed
   }

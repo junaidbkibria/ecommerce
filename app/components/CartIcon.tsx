@@ -3,9 +3,9 @@ import React from "react";
 import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-import Link from "next/link";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useGlobalContext } from "../Context/store";
+import { useRouter } from "next/navigation";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -16,15 +16,18 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   },
 }));
 
+
 export default function CartIcon() {
   const { cartCount } = useGlobalContext();
+  const route = useRouter()
+  const routeToCart = () => {
+    route.replace("/cart")
+  }
   return (
-    <Link href="/cart">
-      <IconButton aria-label="cart">
+      <IconButton aria-label="cart" onClick={routeToCart}>
         <StyledBadge badgeContent={cartCount} color="secondary">
           <ShoppingCartIcon />
         </StyledBadge>
       </IconButton>
-    </Link>
   );
 }
