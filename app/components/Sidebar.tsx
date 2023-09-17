@@ -17,7 +17,7 @@ import { Typography } from "@mui/material";
 
 const drawerWidth = 240;
 
-export default function ResponsiveDrawer({ data, filterFunction }) {
+export default function ResponsiveDrawer({ data , filterFunction }: {data: any, filterFunction: any}) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
