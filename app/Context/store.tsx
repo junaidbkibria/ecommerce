@@ -1,5 +1,5 @@
 'use client';
-
+import React, { ReactNode } from "react";
 import { createContext, useContext, Dispatch, SetStateAction, useState } from "react";
 
 type DataType = {
@@ -31,7 +31,7 @@ const GlobalContext = createContext<ContextProps>({
     setCartData: (): DataType[] => [] 
 })
 
-export const GlobalContextProvider = ({ children }) => {
+export const GlobalContextProvider = ({ children }: {children: ReactNode}) => {
     const [cartCount, setCartCount] = useState(0);
     const [ total, setTotal] = useState(0);
     const [cartData, setCartData] = useState<[] | DataType[]>([]);
